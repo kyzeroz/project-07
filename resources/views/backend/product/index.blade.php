@@ -1,9 +1,8 @@
 @extends('layouts.master_backend') 
 @section('conten')
-         <!-- Main Content -->
-        <div id="content">
+ <!-- Main Content -->
+ <div id="content">
 
-        
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -26,8 +25,8 @@
         </div>
     </form>
 
-<!-- Topbar Navbar -->
-<ul class="navbar-nav ml-auto">
+    <<!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
 
 <!-- Nav Item - Search Dropdown (Visible Only XS) -->
 <li class="nav-item dropdown no-arrow d-sm-none">
@@ -52,7 +51,6 @@
         </form>
     </div>
 </li>
-
 
 <!-- Nav Item - Alerts -->
 <li class="nav-item dropdown no-arrow mx-1">
@@ -217,9 +215,11 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">kuay tiew kai mareaw</h1>
+   <!-- Page Heading -->
+   <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">product</h1>
+        <a href="{{route ('p.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        class="fas fa-download fa-sm text-white-50"></i> Add item</a>
     </div>
 
 </div>

@@ -1,33 +1,34 @@
 @extends('layouts.master_backend') 
 @section('conten')
-         <!-- Main Content -->
-        <div id="content">
+            <!-- Main Content -->
+            <div id="content">
 
-        
-<!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-    <!-- Sidebar Toggle (Topbar) -->
-    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-        <i class="fa fa-bars"></i>
-    </button>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
-    <!-- Topbar Search -->
-    <form
-        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-        <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                    <i class="fas fa-search fa-sm"></i>
-                </button>
-            </div>
-        </div>
-    </form>
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
-<!-- Topbar Navbar -->
-<ul class="navbar-nav ml-auto">
+                   <!-- Topbar Navbar -->
+                   <ul class="navbar-nav ml-auto">
 
 <!-- Nav Item - Search Dropdown (Visible Only XS) -->
 <li class="nav-item dropdown no-arrow d-sm-none">
@@ -52,7 +53,6 @@
         </form>
     </div>
 </li>
-
 
 <!-- Nav Item - Alerts -->
 <li class="nav-item dropdown no-arrow mx-1">
@@ -173,8 +173,8 @@
 
 <div class="topbar-divider d-none d-sm-block"></div>
 
-        <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown no-arrow">
+             <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
@@ -207,21 +207,65 @@
                     </x-responsive-nav-link>
                 </form>
             </div>
-        </li>
+                        </li>
 
-    </ul>
+                    </ul>
 
-</nav>
-<!-- End of Topbar -->
+                </nav>
+                <!-- End of Topbar -->
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">kuay tiew kai mareaw</h1>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">User Table</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>name</th>
+                                            <th>email</th>
+                                            <th>phone</th>
+                                        </tr>
+                                    </thead>
+                                    @foreach ($user as $u)
+                                        <tr>
+                                            <td>{{$u->id}}</td>
+                                            <td>{{$u->name}}</td>
+                                            <td>{{$u->email}}</td>
+                                            <td>{{$u->phone}}</td>
+                                        <td>
+                                            <a href="#"><i class='bx bxs-edit'></i></a>
+                                            <a href="#"><i class='bx bxs-trash'></i></a>
+                                        </td>
+                                        </tr>
+                                        @endforeach
+                                   
+                                    <tbody>
+                                        
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
     </div>
 
-</div>
-<!-- End of Main Content -->
-@endsection
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+            </div>
+        </div>
+    </div>
+    @endsection

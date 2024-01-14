@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CatagoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('auth.login');
+}); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +31,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//เมนู User
+ Route::get('admin/user/index',[Usercontroller::class, 'user']) ->name('u.index');
+
+ //เมนู Product
+ Route::get('admin/product/index',[Productcontroller::class, 'product']) ->name('p.index');
+ Route::get('admin/product/create',[Productcontroller::class, 'create']) ->name('p.create');
+
+ //เมนู catagory
+ Route::get('admin/catagory/index',[Catagorycontroller::class, 'catagory']) ->name('c.index');
+ Route::get('admin/catagory/create',[Catagorycontroller::class, 'catagory']) ->name('c.create');
