@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\CatagoryController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +39,9 @@ require __DIR__.'/auth.php';
  Route::get('admin/product/index',[Productcontroller::class, 'product']) ->name('p.index');
  Route::get('admin/product/create',[Productcontroller::class, 'create']) ->name('p.create');
 
- //เมนู catagory
- Route::get('admin/catagory/index',[Catagorycontroller::class, 'catagory']) ->name('c.index');
- Route::get('admin/catagory/create',[Catagorycontroller::class, 'catagory']) ->name('c.create');
+ //เมนู category
+ Route::get('admin/category/index',[Categorycontroller::class, 'category']) ->name('c.index');
+ Route::get('admin/category/create',[Categorycontroller::class, 'category']) ->name('c.create');
+ Route::post('admin/category/insert',[CategoryController::class, 'insert']);
+ Route::get('admin/category/edit/{id}',[CategoryController::class, 'edit']);
+ Route::post('admin/category/update/{id}',[CategoryController::class, 'update']);

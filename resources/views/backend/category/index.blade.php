@@ -221,33 +221,34 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Category Table</h6>
+                            <a href="{{ route('c.create') }}"class="btn btn-success mx-3"><i class='bx bxs-plus-circle'></i> เพิ่มข้อมูล</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>name</th>
-                                            <th>email</th>
-                                            <th>phone</th>
-                                        </tr>
+                        
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Created_at</th>
+                                        <th>Updated_at</th>
+                                        <th>Actions</th>
+                                        
                                     </thead>
-                                   
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                    <tbody>
+                                    @foreach ($category as $cat)
+                                    <tr>
+                                        <td>{{ $cat->category_id }}</td>
+                                        <td>{{ $cat->name }}</td>
+                                        <td>{{$cat->created_at }}</td>
+                                        <td>{{$cat->updated_at }}</td>
                                         <td>
-                                            <a href="#"><i class='bx bxs-edit'></i></a>
+                                            <a href="{{ url('admin/category/edit/',$cat->category_id) }}"><i class='bx bxs-edit'></i></a>
                                             <a href="#"><i class='bx bxs-trash'></i></a>
                                         </td>
-                                        </tr>
-                                        
-                                   
-                                    <tbody>
-                                        
+                                    </tr>
+                                    @endforeach
+                                   </tbody>    
                                 </table>
                             </div>
                         </div>
