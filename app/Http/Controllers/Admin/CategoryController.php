@@ -45,11 +45,11 @@ class CategoryController extends Controller
 
             }
 
-            public function update(Request $request,$category_id){
+            public function update(Request $request, $category_id){
                 $category = Category::find($category_id);
                 $category->name = $request->name;
                 $category->update();
-                alert()->success('อัพเดทช้อมูลสำเสร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
+                alert()->success('อัพเดทข้อมูลสำเสร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
                 return redirect()->route('c.create');
             }
 

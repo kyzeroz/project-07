@@ -221,7 +221,9 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Category Table</h6>
+                            <div style="padding-left: 44.7cm">
                             <a href="{{ route('c.create') }}"class="btn btn-success mx-3"><i class='bx bxs-plus-circle'></i> เพิ่มข้อมูล</a>
+                         </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -243,8 +245,8 @@
                                         <td>{{$cat->created_at }}</td>
                                         <td>{{$cat->updated_at }}</td>
                                         <td>
-                                            <a href="{{ url('admin/category/edit/',$cat->category_id) }}"><i class='bx bxs-edit'></i></a>
-                                            <a href="#"><i class='bx bxs-trash'></i></a>
+                                            <a href="{{ url('admin/category/edit/'.$cat->category_id) }}"><i>เเก้ไข</i></a>
+                                            <a href="#"><i>ลบ</i></a>
                                         </td>
                                     </tr>
                                     @endforeach

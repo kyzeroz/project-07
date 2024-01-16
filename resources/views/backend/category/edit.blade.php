@@ -6,7 +6,7 @@
                             <div class="col-md-12">
                               <div class="card mb-9">
                                 <h5 class="card-header">edit</h5>
-                                <form method="POST" action="{{ url('admin/category/update/',$cat->category_id) }}">
+                                <form method="POST" action="{{ url('admin/category/update/'.$cat->category_id) }}">
                                 @csrf
                                 <div class="card-body">
                                   <div>
@@ -20,9 +20,13 @@
                                       placeholder="กรุณากรอกชื่อสินค้า"
                                       aria-describedby="defaultFormControlHelp"
                                     />
-
-                                    <input type="submit" value="บันทึก" class="btn btn-primary mt-3">
-                                    <a href="{{ route ('p.index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
+                                    <div class="mt-3">
+                                    @error('name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    </div>
+                                    <input type="submit" value="อัพเดต" class="btn btn-primary mt-3">
+                                    <a href="{{ route ('c.index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
                                   </div>
                                  </form>
                                 </div>
