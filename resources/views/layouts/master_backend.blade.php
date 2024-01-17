@@ -28,12 +28,12 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/dashboard')}}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-database"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Database</div>
             </a>
@@ -49,19 +49,19 @@
 
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('u.index')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-user"></i>
                     <span>User</span></a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('c.index')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-folder"></i>
                     <span>Category</span></a>
             </li>
             
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('p.index')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fab fa-product-hunt"></i>
                     <span>Product</span></a>
             </li>
 
