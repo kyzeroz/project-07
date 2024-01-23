@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
-}); 
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,6 +38,7 @@ require __DIR__.'/auth.php';
  //เมนู Product
  Route::get('admin/product/index',[ProductController::class, 'product']) ->name('p.index');
  Route::get('admin/product/create',[ProductController::class, 'create']) ->name('p.create');
+ Route::post('admin/product/insert',[ProductController::class, 'insert']);
 
  //เมนู category
  Route::get('admin/category/index',[CategoryController::class, 'index']) ->name('c.index');
@@ -45,3 +46,4 @@ require __DIR__.'/auth.php';
  Route::post('admin/category/insert',[CategoryController::class, 'insert']);
  Route::get('admin/category/edit/{id}',[CategoryController::class, 'edit']);
  Route::post('admin/category/update/{id}',[CategoryController::class, 'update']);
+ Route::get('admin/category/delete/{id}',[CategoryController::class, 'delete']);

@@ -124,19 +124,22 @@
                                     <tbody>
                                     @foreach ($category as $cat)
                                     <tr>
-                                        <td>{{ $cat->category_id }}</td>
+                                        <td>{{ $category->firstItem()+$loop->index}}</td>
                                         <td>{{ $cat->name }}</td>
                                         <td>{{$cat->created_at }}</td>
                                         <td>{{$cat->updated_at }}</td>
                                         <td>
                                             <a href="{{ url('admin/category/edit/'.$cat->category_id) }}"><i>เเก้ไข</i></a>
-                                            <a href="#"><i>ลบ</i></a>
+                                            <a href="{{ url('admin/category/delete/'.$cat->category_id) }}"><i>ลบ</i></a>
                                         </td>
                                     </tr>
                                     @endforeach
                                    </tbody>    
                                 </table>
+                                <div class="mt-3">
+                                    {{$category->links('pagination::bootstrap-5')}}
                             </div>
+                        
                         </div>
                     </div>
 
