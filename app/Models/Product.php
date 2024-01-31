@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $primaryKey = 'product_id';
 
-    public  function categoty(){
-        return $this ->belongsTo(categoty::class,'category_id');
-       }
+    public function category(){
+        return $this->belongsTo(Category::class,'category_id');
+    }
 }

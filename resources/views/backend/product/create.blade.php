@@ -57,10 +57,10 @@
                                         @enderror
                                         </div>
 
-                                    <label for="exampleFormControlSelect1" class="form-label">Category</label>
+                                        <label for="exampleFormControlSelect1" class="form-label">Category</label>
                                     <select name="category_id" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
                                       <option selected>กรุณาเลือกประเภทสินค้า</option>
-                                    @foreach ( $category as $cat )
+                                      @foreach ( $category as $cat )
                                       <option value="{{ $cat->category_id }}">{{ $cat->name }}</option>
                                     @endforeach
                                     </select>

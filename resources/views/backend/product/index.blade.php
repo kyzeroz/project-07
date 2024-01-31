@@ -127,10 +127,10 @@
                                     <tbody>
                                         @foreach ( $product as $pro )
                                         <tr>
-                                          <td>{{$product->firstItem() + $loop->index}}</td>
-                                          <td>{{$pro->name}}</td>
+                                          <td>{{ $product->firstItem() + $loop->index}}</td>
+                                          <td>{{ $pro->name }}</td>
                                           <td>
-                                            <img src="{{asset('backend/product/resize/'.$pro->image)}}" alt="">
+                                            <img src="{{asset('backend/product/resize/'.$pro->image) }}" alt="">
                                           </td>
                                           <td>{{ $pro->price }}</td>
                                           <td>{{ $pro->description }}</td>

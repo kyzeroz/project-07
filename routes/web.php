@@ -35,14 +35,6 @@ require __DIR__.'/auth.php';
 //เมนู User
  Route::get('admin/user/index',[UserController::class, 'user']) ->name('u.index');
 
- //เมนู Product
- Route::get('admin/product/index',[ProductController::class, 'product']) ->name('p.index');
- Route::get('admin/product/create',[ProductController::class, 'create']) ->name('p.create');
- Route::post('admin/product/insert',[ProductController::class, 'insert']);
- Route::get('admin/product/edit/{id}',[ProductController::class, 'edit']) ->name('p.edit');
- Route::post('admin/product/update/{id}',[ProductController::class, 'update']);
- Route::get('admin/product/delete/{id}',[ProductController::class, 'delete']);
-
  //เมนู category
  Route::get('admin/category/index',[CategoryController::class, 'index']) ->name('c.index');
  Route::get('admin/category/create',[CategoryController::class, 'create']) ->name('c.create');
@@ -50,3 +42,11 @@ require __DIR__.'/auth.php';
  Route::get('admin/category/edit/{id}',[CategoryController::class, 'edit']);
  Route::post('admin/category/update/{id}',[CategoryController::class, 'update']);
  Route::get('admin/category/delete/{id}',[CategoryController::class, 'delete']);
+
+ //เมนู Product
+Route::get('admin/product/index',[ProductController::class, 'product'])->name('p.index');
+Route::get('admin/product/create',[ProductController::class,'create_product'])->name('p.create');
+Route::post('admin/product/insert',[ProductController::class,'insert']);
+Route::get('admin/product/edit/{id}',[ProductController::class,'edit'])->name('p.edit');
+Route::post('admin/product/update/{id}',[ProductController::class,'update']);
+Route::get('admin/product/delete/{id}',[ProductController::class,'delete']);

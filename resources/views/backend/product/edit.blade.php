@@ -6,7 +6,7 @@
                             <div class="col-md-12">
                               <div class="card mb-9">
                                 <h5 class="card-header">edit</h5>
-                                <form method="POST" action="{{ url('admin/product/update/'.$pro->product_id) }}">
+                                <form method="POST" action="{{ url('admin/product/update/'.$pro->product_id) }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                   <div>
@@ -45,19 +45,30 @@
 
                                     <label for="exampleFormControlSelect1" class="form-label">Category</label>
                                     <select name="category_id" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
-                                      <option selected>กรุณาเลือกประเภทสินค้า</option>
-                                      <option value="1">ก๋วยเตี๋ยว</option>
-                                      <option value="2">ข้าวมันไก่</option>
-                                    </select>
+                                        @foreach ($cat as $c )
+                                        <option value="{{$c->category_id}}"
+                                        @if ($c->category_id == $pro->category_id)
+                                            selected
+                                        @endif >
+                                        {{$c->name}}
+                                    </option>
+                                        @endforeach
+                                    </select> <br>
 
                                     <label for="defaultFormControlInput" class="form-label">Images</label>
-                                      <div class="input-group">
-                                        <input name="image" value="{{ $pro->image}}" type="file" class="form-control" id="inputGroupFile02" />
-                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                    <div class="input-group">
+                                      <input type="file" name="image" class="form-control" id="inputGroupFile02" />
+                                      <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                    </div>
+
+                                        <div class="mt-3">
+                                          @error('image')
+                                              <div class="alert alert-danger">{{$message}}</div>
+                                          @enderror
                                       </div>
 
                                       <div class="mt-4">
-                                        <img src="{{ asset('backend/product/resize'.$pro->image)}}" alt="">
+                                        <img src="{{ asset('backend/product/resize/'.$pro->image)}}" alt="">
                                       </div>
 
                                       <input type="submit" value="อัพเดต" class="btn btn-primary mt-3">
