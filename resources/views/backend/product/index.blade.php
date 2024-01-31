@@ -113,20 +113,36 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-
+                                    <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>images</th>
+                                        <th>Price</th>
+                                        <th>Description</th>
                                         <th>Created_at</th>
                                         <th>Updated_at</th>
                                         <th>Actions</th>
-
+                                    </tr>
                                     </thead>
                                     <tbody>
-
-                                    <tr>
-                                    </tr>
-
-                                   </tbody>    
+                                        @foreach ( $product as $pro )
+                                        <tr>
+                                          <td>{{$product->firstItem() + $loop->index}}</td>
+                                          <td>{{$pro->name}}</td>
+                                          <td>
+                                            <img src="{{asset('backend/product/resize/'.$pro->image)}}" alt="">
+                                          </td>
+                                          <td>{{ $pro->price }}</td>
+                                          <td>{{ $pro->description }}</td>
+                                          <td>{{ $pro->created_at }}</td>
+                                          <td>{{ $pro->updated_at }}</td>
+                                          <td>
+                                            <a href="{{ route('p.edit',$pro->product_id) }}"><i>เเก้ไข</i></a>
+                                            <a href="{{ url('admin/product/delete/'.$pro->product_id) }}"><i>ลบ</i></a>
+                                        </td>
+                                        </tr>
+                                        @endforeach
+                                   </tbody>
                                 </table>
 
                         </div>

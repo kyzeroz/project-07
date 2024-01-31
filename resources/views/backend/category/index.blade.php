@@ -1,4 +1,4 @@
-@extends('layouts.master_backend') 
+@extends('layouts.master_backend')
 @section('conten')
             <!-- Main Content -->
             <div id="content">
@@ -113,13 +113,13 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                        
+
                                         <th>No</th>
                                         <th>Name</th>
                                         <th>Created_at</th>
                                         <th>Updated_at</th>
                                         <th>Actions</th>
-                                        
+
                                     </thead>
                                     <tbody>
                                     @foreach ($category as $cat)
@@ -134,12 +134,12 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                   </tbody>    
+                                   </tbody>
                                 </table>
                                 <div class="mt-3">
                                     {{$category->links('pagination::bootstrap-5')}}
                             </div>
-                        
+
                         </div>
                     </div>
 

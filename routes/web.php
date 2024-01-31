@@ -39,6 +39,9 @@ require __DIR__.'/auth.php';
  Route::get('admin/product/index',[ProductController::class, 'product']) ->name('p.index');
  Route::get('admin/product/create',[ProductController::class, 'create']) ->name('p.create');
  Route::post('admin/product/insert',[ProductController::class, 'insert']);
+ Route::get('admin/product/edit/{id}',[ProductController::class, 'edit']) ->name('p.edit');
+ Route::post('admin/product/update/{id}',[ProductController::class, 'update']);
+ Route::get('admin/product/delete/{id}',[ProductController::class, 'delete']);
 
  //เมนู category
  Route::get('admin/category/index',[CategoryController::class, 'index']) ->name('c.index');
