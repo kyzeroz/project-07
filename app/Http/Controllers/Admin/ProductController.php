@@ -46,7 +46,7 @@ class ProductController extends Controller
         if($request->hasFile('image')){
             $filename = Str::random(10).'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path().'/backend/product/',$filename);
-            Image::make(public_path().'/backend/product/'.$filename)->resize(50,50)->save(public_path().'/backend/product/resize/'.$filename);
+            Image::make(public_path().'/backend/product/'.$filename)->resize(100,100)->save(public_path().'/backend/product/resize/'.$filename);
             $pro->image = $filename;
         }else{
             $pro->image = "no_image.jpg";
@@ -80,7 +80,7 @@ class ProductController extends Controller
 
             $filename = Str::random(10).'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path().'/backend/product/',$filename);
-            Image::make(public_path().'/backend/product/'.$filename)->resize(50,50)->save(public_path().'/backend/product/resize/'.$filename);
+            Image::make(public_path().'/backend/product/'.$filename)->resize(100,100)->save(public_path().'/backend/product/resize/'.$filename);
             $pro->image = $filename;
         }
 

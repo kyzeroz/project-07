@@ -1,11 +1,14 @@
 @extends('layouts.master_backend')
 @section('conten')
-
-<div class="container-xxl flex-grow-1 container-p-y">
-                        <div class="row">
-                            <div class="col-md-12">
-                              <div class="card mb-9">
-                                <h5 class="card-header">Category</h5>
+<div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"> Category</h4>
+          </div>
+          <div class="card-body">
+              <table class="table">
                                 <form method="POST" action="{{ url('admin/category/insert') }}">
                                 @csrf
                                 <div class="card-body">

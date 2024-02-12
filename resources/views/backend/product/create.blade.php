@@ -1,14 +1,15 @@
 @extends('layouts.master_backend')
 @section('conten')
-<div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                    <div class="container-xxl flex-grow-1 container-p-y">
-                        <div class="row">
-                            <div class="col-md-12">
-                              <div class="card mb-9">
-                                <h5 class="card-header">Product</h5>
-                                <div class="card-body">
+<div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"> Product</h4>
+          </div>
+          <div class="card-body">
+              <table class="table">
+                                    </div>
                                   <form action="{{url('admin/product/insert')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                   <div>
