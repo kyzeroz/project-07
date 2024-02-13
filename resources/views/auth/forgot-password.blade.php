@@ -79,7 +79,7 @@
                 <div class="flex-col-c p-t-50">
                   <p class="mt-4 text-sm twext-center">
                     Already have an account?
-                    <a href="{{ route('register')}}" class="txt3" >Sign in</a>
+                    <a href="{{ route('login')}}" class="txt3" >Sign in</a>
                   </p>
                 </div>
                 </form>

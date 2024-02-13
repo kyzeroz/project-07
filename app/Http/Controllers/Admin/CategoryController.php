@@ -12,7 +12,7 @@ class CategoryController extends Controller
             $category = Category::orderBy('category_id','desc')->paginate(5);
             return view('backend.category.index',compact('category'));
         }
-    
+
         public function create(){
             return view('backend.category.create');
     }
@@ -23,7 +23,7 @@ class CategoryController extends Controller
             //ทำการป้องกันการกรอกข้อมูลผ่านฟอร์ม
             $validated = $request->validate([
                 'name' => 'required|unique:categories|max:255',
-                
+
             ],
             [
                 'name.required' =>'กรุณากรอกชื่อประเภทสินค้า',
@@ -34,7 +34,7 @@ class CategoryController extends Controller
            $cat = new Category();
            $cat->name = $request->name;
            $cat->save();
-           alert()->success('บันทึกช้อมูลสำเสร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
+           alert()->success('บันทึกข้อมูลสำเร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
 
          return redirect()->route('c.index');
 
@@ -49,14 +49,14 @@ class CategoryController extends Controller
                 $category = Category::find($category_id);
                 $category->name = $request->name;
                 $category->update();
-                alert()->success('อัพเดทข้อมูลสำเสร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
+                alert()->success('อัพเดทข้อมูลสำเร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
                 return redirect()->route('c.index');
             }
 
             public function delete($category_id){
                 $category = Category::find($category_id);
                 $category->delete();
-                alert()->success('ลบข้อมูลสำเสร็จ','ข้อมูลนี้ลบเรียบร้อยเเล้ว');
+                alert()->success('ลบข้อมูลสำเร็จ','ข้อมูลนี้ลบเรียบร้อยเเล้ว');
                 return redirect()->route('c.index');
             }
     }

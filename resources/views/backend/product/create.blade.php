@@ -58,13 +58,22 @@
                                         @enderror
                                         </div>
 
-                                        <label for="exampleFormControlSelect1" class="form-label">Category</label>
-                                    <select name="category_id" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
-                                      <option selected>กรุณาเลือกประเภทสินค้า</option>
-                                      @foreach ( $category as $cat )
-                                      <option value="{{ $cat->category_id }}">{{ $cat->name }}</option>
-                                    @endforeach
-                                    </select>
+                
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Category</label>
+                                        <select name="category_id" class="form-control" id="exampleFormControlSelect1">
+                                            <option selected>กรุณาเลือกประเภทสินค้า</option>
+                                            @foreach ( $category as $cat )
+                                            <option value="{{ $cat->category_id }}">{{ $cat->name }}</option>
+                                          @endforeach
+                                        </select>
+                                      </div>
+
+
+
+
 
                                     <label for="defaultFormControlInput" class="form-label">Images</label>
                                       <div class="input-group">
