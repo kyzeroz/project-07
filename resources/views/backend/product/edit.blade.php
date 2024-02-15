@@ -28,9 +28,10 @@
                                         class="form-control" id="defaultFormControlInput" placeholder="กรุณากรอกชื่อสินค้า"
                                         aria-describedby="defaultFormControlHelp" />
 
-
-
-
+                                        <label for="defaultFormControlInput" class="form-label">quantity</label>
+                                        <input type="int" name="quantity" value="{{ $pro->quantity }}"
+                                            class="form-control" id="defaultFormControlInput" placeholder="กรุณากรอกจำนวนสินค้า"
+                                            aria-describedby="defaultFormControlHelp" />
 
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Category</label>

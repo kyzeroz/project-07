@@ -47,7 +47,7 @@
                               <div class="card-header">
                                 <h4 class="card-title">Product Table</h4>
                                 <div style="m-1">
-                                    <a href="{{ route('p.create') }}"class="btn btn-success "><i class='bx bxs-plus-circle'></i> เพิ่มข้อมูล</a>
+                                    <a href="{{ route('p.create') }}"class="btn btn-success "><i class='bx bxs-plus-circle'></i> ADD ITEM</a>
                                  </div>
                             </div>
                               <div class="card-body">
@@ -58,7 +58,8 @@
                                         <th>Name</th>
                                         <th>images</th>
                                         <th>Price</th>
-                                        <th>Description</th>
+                                       <th>Category</th>
+                                        <th>quantity</th>
                                         <th>Created_at</th>
                                         <th>Updated_at</th>
                                         <th>Actions</th>
@@ -72,17 +73,21 @@
                                             <img src="{{asset('backend/product/resize/'.$pro->image) }}" alt="">
                                           </td>
                                           <td>{{ $pro->price }}</td>
-                                          <td>{{ $pro->description }}</td>
+                                          <td>{{ $pro->category->name }}</td>
+                                          <td>{{ $pro->quantity }}</td>
                                           <td>{{ $pro->created_at }}</td>
                                           <td>{{ $pro->updated_at }}</td>
                                           <td>
-                                            <a href="{{ route('p.edit',$pro->product_id) }}" class="btn btn-warning">เเก้ไข</a>
-                                            <a href="{{ url('admin/product/delete/'.$pro->product_id) }}" class="btn btn-danger">ลบ</a>
+                                            <a href="{{ route('p.edit',$pro->product_id) }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ url('admin/product/delete/'.$pro->product_id) }}" class="btn btn-danger">Delete</a>
                                         </td>
                                         </tr>
                                         @endforeach
                                    </tbody>
                                 </table>
+                                <div class="mt-3">
+                                    {{$product->links('pagination::bootstrap-5')}}
+                            </div>
 
                         </div>
                     </div>

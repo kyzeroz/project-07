@@ -25,23 +25,29 @@ class ProductController extends Controller
     public function insert(Request $request){
 
         //ป้องกันการกรอกข้อมูลผ่านฟอร์ม
-        $validated = $request->validate(['name'=>'required|max:255',
-        'price'=>'required|max:255',
-        'description'=>'required',
-        'image'=>'mimes:jpg,jpeg,png',
+        $validated = $request->validate(
+        [
+            'name'=>'required|max:255',
+            'price'=>'required|max:255',
+            'description'=>'required',
+            'quantity'=>'required',
+            'image'=>'mimes:jpg,jpeg,png',
         ],
         [
             'name.required'=>'กรุณากรอกข้อมูลสินค้า',
             'name.max'=>'กรอกข้อมูลได้ 255 ตัวอักษร',
             'price.required'=>'กรุณากรอกข้อมูลราคาสินค้า',
             'description.required'=>'กรุณากรอกข้อมูลประเภทสินค้า',
+            'quantity.required'=>'กรุณากรอกจำนวนสินค้า',
             'image.mimes'=>'อัพโหลดภาพที่มีนามสกุล .jpg .jpeg .png ได้เท่านั้น'
-        ]);
+        ]
+    );
 
         $pro = new Product();
         $pro->name = $request->name;
         $pro->price = $request->price;
         $pro->description = $request->description;
+        $pro->quantity = $request->quantity;
         $pro->category_id = $request->category_id;
         if($request->hasFile('image')){
             $filename = Str::random(10).'.'.$request->file('image')->getClientOriginalExtension();
@@ -67,6 +73,7 @@ class ProductController extends Controller
        $pro->name = $request->name;
         $pro->price = $request->price;
         $pro->description = $request->description;
+        $pro->quantity = $request->quantity;
         $pro->category_id = $request->category_id;
 
         if($request->hasFile('image')){

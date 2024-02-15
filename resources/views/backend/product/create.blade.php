@@ -58,7 +58,20 @@
                                         @enderror
                                         </div>
 
-                
+                                        <label for="defaultFormControlInput" class="form-label">quantity</label>
+                                        <input
+                                          type="int"
+                                          name="quantity"
+                                          class="form-control"
+                                          id="defaultFormControlInput"
+                                          placeholder="จำนวนสินค้า"
+                                          aria-describedby="defaultFormControlHelp"/>
+
+                                          <div class="mt-3">
+                                            @error('quantity')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                            </div>
 
 
                                     <div class="form-group">

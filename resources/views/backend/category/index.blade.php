@@ -40,7 +40,7 @@
                             <div class="card-header">
                               <h4 class="card-title">Categaory Table</h4>
                               <div style="m-1">
-                                <a href="{{ route('c.create') }}"class="btn btn-success"><i class='bx bxs-plus-circle'></i> เพิ่มข้อมูล</a>
+                                <a href="{{ route('c.create') }}"class="btn btn-success"><i class='bx bxs-plus-circle'></i> Add item</a>
                              </div>
                             </div>
                             <div class="card-body">
@@ -62,8 +62,8 @@
                                         <td>{{$cat->created_at }}</td>
                                         <td>{{$cat->updated_at }}</td>
                                         <td>
-                                            <a href="{{ url('admin/category/edit/'.$cat->category_id) }}" class="btn btn-warning">เเก้ไข</a>
-                                            <a href="{{ url('admin/category/delete/'.$cat->category_id) }}" class="btn btn-danger">ลบ</a>
+                                            <a href="{{ url('admin/category/edit/'.$cat->category_id) }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ url('admin/category/delete/'.$cat->category_id) }}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach
